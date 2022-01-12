@@ -132,6 +132,10 @@ class Firebase {
     
   }
 
+  getDocument = async ({ collectionId, docId }) => {
+    return (await this.write.collection(collectionId).doc(docId).get()).data()
+  }
+
   getCollectionDocs = async ({ collectionId }) => {
     return (await this.write.collection(collectionId).get()).docs.map(doc => doc.data())
   }
