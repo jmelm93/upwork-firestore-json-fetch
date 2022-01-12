@@ -8,6 +8,8 @@ import {
 import HomePage from '../pages/Home';
 
 import Uploader from '../components/Tools/Uploader'
+import UploaderSemrushDeclines from '../components/Tools/UploaderSemrushDeclines'
+import UploaderUrlGroupings from '../components/Tools/UploaderUrlGroupings'
 import * as ROUTES from '../constants/routes';
 
 import toolInfo from "../JsonData/tool_info.json";
