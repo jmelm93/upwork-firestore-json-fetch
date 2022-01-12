@@ -1,0 +1,57 @@
+{
+    "competitiveKeyword": [
+        {
+            "pageName": "Competitive Keyword Analysis",
+            "titleTag": "Competitive Keyword Analysis",
+            "link": "competitive-keyword-analysis",
+            "urlPath": "/opportunity/competitive-keyword-analysis",
+            "shortDescription": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "apiPathUpload": "/api/semrush/competitive-analysis/upload",
+            "apiPathDownload": ""
+        }
+    ],
+    "keywordChange": [
+        {
+            "pageName": "Keyword Changes",
+            "titleTag": "Automated Keyword Change Analysis",
+            "link": "keyword-changes",
+            "urlPath": "/change/keyword-changes",
+            "shortDescription": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "apiPathUpload": "/api/semrush/keyword-declines/upload",
+            "apiPathDownload": ""
+        }
+    ],
+    "urlGroupings": [
+        {
+            "pageName": "URL Grouping KPI Analysis",
+            "titleTag": "URL Grouping KPI Analysis",
+            "link": "url-groupings",
+            "urlPath": "/categorization/url-groupings",
+            "shortDescription": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "apiPathUpload": "/api/semrush/categorization-analysis/upload",
+            "apiPathDownload": ""
+        }
+    ],
+    "gscSemrushMerged": [
+        {
+            "pageName": "SEMRush Keywords vs Clicks & Impr",
+            "titleTag": "SEMRush Keywords vs Clicks & Impr",
+            "link": "semrush-merge-gsc",
+            "urlPath": "/opportunity/semrush-merge-gsc",
+            "shortDescription": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "apiPathUpload": "/api/gsc/submit-form",
+            "apiPathDownload": "/api/gsc/download-output"
+        }
+    ],
+    "gscQueryChecker": [
+        {
+            "pageName": "Query Optimization Checker (GSC)",
+            "titleTag": "Query Optimization Checker (GSC)",
+            "link": "gsc-query-optimization-checker",
+            "urlPath": "/opportunity/gsc-query-optimization-checker",
+            "shortDescription": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "apiPathUpload": "/api/gsc/submit-form-query-checker",
+            "apiPathDownload": "/api/gsc/download-output-query-checker"
+        }
+    ]
+}
