@@ -132,6 +132,10 @@ class Firebase {
     
   }
 
+  getCollectionDocs = async ({ collectionId }) => {
+    return (await this.write.collection(collectionId).get()).docs.map(doc => doc.data())
+  }
+
   // *** Notifications API ***
   setNotification = (data) => {
     console.log('notification', data)

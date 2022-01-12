@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   BrowserRouter as Router, 
   Route, 
@@ -12,27 +12,41 @@ import * as ROUTES from '../constants/routes';
 
 import toolInfo from "../JsonData/tool_info.json";
 
+import { withFirebase } from '../components/Firebase';
+
 // console.log(toolInfo.competitiveKeyword[0]["urlPath"])
 
-const App = () => (
+const App = (props) =>
+{
+  const [tools, setTools] = useState(undefined)
 
-  <Router>
-    <div>
-      <div className="d-flex">
-        <div className="content-container">
-          <div className="col">
-            <Switch>
-              <Route exact path={ROUTES.HOME} element={<HomePage/>} />
-              <Route 
-                path={toolInfo.competitiveKeyword[0]["urlPath"]} 
-                component={() => <Uploader toolInfo={toolInfo.competitiveKeyword[0]}/>} 
-              />            
-            </Switch>
+  useEffect(async () =>
+  {
+    setTools((await props.firebase.getCollectionDocs({collectionId: 'tools'})) || [])
+  }, [])
+
+  return (
+    <Router>
+      <div>
+        <div className="d-flex">
+          <div className="content-container">
+            <div className="col">
+              <Switch>
+                <Route exact path={ROUTES.HOME} component={() => <HomePage tools={tools}/>} />
+
+                { (tools||[]).map((tool, i) =>
+                  <Route
+                    key={i}
+                    path={tool.urlPath}
+                    component={() => <Uploader toolInfo={tool}/>}
+                  /> ) }
+              </Switch>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </Router>
-);
+    </Router>
+  )
+}
 
-export default App;
+export default withFirebase(App);

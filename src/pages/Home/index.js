@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 // import './home.styles.scss'
 
-const HomePage = () => (
+const HomePage = (props) => (
   <Container fluid className="">
     <Row className="border-b">
       <Col className="d-flex">
@@ -17,6 +17,12 @@ const HomePage = () => (
         <h1 className="ml-3">Welcome</h1>
         <p className="ml-3 ">Welcome</p>
         <Link to="/opportunity/competitive-keyword-analysis">Example Page</Link>
+
+        { Array.isArray(props.tools) && <ul>
+          { props.tools.map((tool, i) => <li key={i}>
+            <Link to={tool.urlPath}>{tool.titleTag}</Link>
+          </li>) }
+        </ul> }
       </div>
       </Col>
     </Row>
