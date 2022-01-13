@@ -40,7 +40,15 @@ const App = (props) =>
                   <Route
                     key={i}
                     path={tool.urlPath}
-                    component={() => <Uploader toolInfo={tool}/>}
+                    component={() =>
+                      {
+                        switch ( tool.component ) {
+                          case 'UploaderSemrushDeclines': return <UploaderSemrushDeclines toolInfo={tool}/>
+                          case 'UploaderUrlGroupings': return <UploaderUrlGroupings toolInfo={tool}/>
+                          case 'Uploader':
+                          default: return <Uploader toolInfo={tool}/>
+                        }
+                      }}
                   /> ) }
               </Switch>
             </div>
